@@ -74,10 +74,10 @@
     --ink-4: #999999;
     --line: #e8e8e6;
     --line-2: #ececea;
-    --accent: #111111;
-    --accent-hover: #000000;
-    --success: #1b6b3a;
-    --star: #111111;
+    --accent: #2d5a27;
+    --accent-hover: #1e3e1a;
+    --success: #2d5a27;
+    --star: #2d5a27;
 
     --radius-sm: 4px;
     --radius: 8px;
@@ -364,9 +364,10 @@
   .usp__icon {
     width: 44px; height: 44px;
     border-radius: 10px;
-    background: var(--bg-soft);
+    background: #eef4ec;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
+    color: var(--accent);
   }
   .usp__icon svg { width: 22px; height: 22px; }
   .usp__text strong { display: block; font-weight: 500; font-size: 14px; }
@@ -541,7 +542,7 @@
   }
   .color-swatch:hover { transform: scale(1.06); }
   .color-swatch.is-active {
-    box-shadow: 0 0 0 2px var(--ink);
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent);
   }
 
   .config__qty-row {
@@ -604,7 +605,7 @@
   .feature__icon {
     width: 44px; height: 44px;
     margin-bottom: 24px;
-    color: var(--ink);
+    color: var(--accent);
   }
   .feature h3 {
     font-size: 18px;
