@@ -7,11 +7,17 @@
 <meta name="description" content="Pufa Kostka POSO 40×40×38 cm ze sztruksu premium z praktycznym schowkiem. Producent Dom Glamour. 8 kolorów, 3 rozmiary. Polska produkcja, dostawa 3–5 dni." />
 <meta name="theme-color" content="#ffffff" />
 
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/grafiki/favicon.ico" />
+<link rel="icon" type="image/png" sizes="64x64" href="/grafiki/favicon-64.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/grafiki/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/grafiki/apple-touch-icon.png" />
+
 <!-- Open Graph -->
 <meta property="og:type" content="product" />
 <meta property="og:title" content="MrPufa — Pufa Kostka POSO ze schowkiem" />
 <meta property="og:description" content="Sztruks premium, praktyczny schowek, 8 kolorów. Od 129 zł. Polska produkcja." />
-<meta property="og:image" content="https://upload.cdn.baselinker.com/products/5066973/1518ac111e0e22318b65639c23cf891f.png" />
+<meta property="og:image" content="https://mrpufa.pl/grafiki/og-image.png" />
 <meta property="og:url" content="https://mrpufa.pl/" />
 <meta property="og:locale" content="pl_PL" />
 
@@ -19,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="MrPufa — Pufa Kostka POSO ze schowkiem" />
 <meta name="twitter:description" content="Sztruks premium z praktycznym schowkiem. Od 129 zł." />
-<meta name="twitter:image" content="https://upload.cdn.baselinker.com/products/5066973/1518ac111e0e22318b65639c23cf891f.png" />
+<meta name="twitter:image" content="https://mrpufa.pl/grafiki/og-image.png" />
 
 <!-- Schema.org Product -->
 <script type="application/ld+json">
@@ -188,19 +194,11 @@
     height: 72px;
   }
   .logo {
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -0.03em;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    line-height: 1;
   }
-  .logo__dot {
-    width: 10px; height: 10px;
-    background: var(--accent);
-    border-radius: 2px;
-    display: inline-block;
-  }
+  .logo img { display: block; }
   .nav { display: flex; gap: 36px; }
   .nav a {
     font-size: 14px;
@@ -973,8 +971,7 @@
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="#" class="logo" aria-label="MrPufa — strona główna">
-      <span class="logo__dot" aria-hidden="true"></span>
-      MrPufa
+      <img src="/grafiki/logo.svg" alt="MrPufa" height="32" />
     </a>
     <nav class="nav" id="nav" aria-label="Główna nawigacja">
       <a href="#produkt">Produkt</a>
@@ -1520,7 +1517,7 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <div class="logo"><span class="logo__dot" aria-hidden="true"></span>MrPufa</div>
+        <div class="logo"><img src="/grafiki/logo-inverse.svg" alt="MrPufa" height="32" /></div>
         <p class="footer__about">Wybór puf ze schowkiem od polskiego producenta Dom Glamour. Sztruks premium, 8 kolorów, 3 rozmiary — projektujemy meble, które robią różnicę w małych przestrzeniach.</p>
       </div>
       <div class="footer__col">
