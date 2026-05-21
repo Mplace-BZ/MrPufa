@@ -1371,7 +1371,7 @@
     <p class="section-sub">Wypełnij formularz — skontaktujemy się w ciągu 24h, aby potwierdzić szczegóły.</p>
 
     <div class="order__layout">
-      <form class="form" id="orderForm" novalidate>
+      <form class="form" id="orderForm" action="https://formspree.io/f/mnjrdbpk" method="POST" novalidate>
         <div class="field">
           <label for="firstName">Imię</label>
           <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
@@ -1763,7 +1763,7 @@
   }
 
   // Form
-  document.getElementById('orderForm').addEventListener('submit', e => {
+  document.getElementById('orderForm').addEventListener('submit', async e => {
     e.preventDefault();
     let valid = true;
     e.target.querySelectorAll('[required]').forEach(f => {
@@ -1771,8 +1771,25 @@
       else { f.style.borderColor = ''; }
     });
     if (!valid) { showToast('Uzupełnij wymagane pola.'); return; }
-    showToast('Dziękujemy! Zamówienie zostało wysłane.');
-    e.target.reset();
+
+    const btn = e.target.querySelector('button[type="submit"]');
+    const origText = btn.textContent;
+    btn.textContent = 'Wysyłam…';
+    btn.disabled = true;
+
+    const data = new FormData(e.target);
+    const res = await fetch('https://formspree.io/f/mnjrdbpk', {
+      method: 'POST', body: data, headers: { Accept: 'application/json' }
+    });
+
+    if (res.ok) {
+      showToast('Dziękujemy! Odezwiemy się w ciągu 24h.');
+      e.target.reset();
+    } else {
+      showToast('Błąd wysyłki — spróbuj ponownie lub napisz na hej@mrpufa.pl');
+    }
+    btn.textContent = origText;
+    btn.disabled = false;
   });
 
   document.getElementById('orderBtn').addEventListener('click', () => {
