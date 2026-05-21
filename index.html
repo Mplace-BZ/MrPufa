@@ -582,7 +582,9 @@
     display: flex; align-items: center; gap: 6px;
   }
   @media (max-width: 880px) {
-    .config__layout { grid-template-columns: 1fr; }
+    .config__layout { grid-template-columns: 1fr; gap: 20px; }
+    .config__preview { aspect-ratio: unset; height: 280px; }
+    .config__preview img { width: 70%; height: 100%; }
   }
 
   /* ============ FEATURES ============ */
@@ -1674,6 +1676,10 @@
         s.setAttribute('aria-checked', active ? 'true' : 'false');
       });
       render();
+      if (window.innerWidth <= 880) {
+        document.getElementById('previewImage')?.closest('.config__preview')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
     colorOptionsEl.appendChild(btn);
   });
@@ -1689,6 +1695,10 @@
         x.setAttribute('aria-checked', active ? 'true' : 'false');
       });
       render();
+      if (window.innerWidth <= 880) {
+        document.getElementById('previewImage')?.closest('.config__preview')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
   });
 
