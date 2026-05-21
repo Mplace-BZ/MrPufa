@@ -434,12 +434,17 @@
   }
   .gallery__main img.is-active { opacity: 1; position: relative; }
   .gallery__thumbs {
-    display: flex; flex-direction: column; gap: 12px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .gallery__thumb-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    flex-shrink: 0;
   }
   .gallery__thumb {
     background: var(--bg-soft);
     border-radius: var(--radius);
     aspect-ratio: 1;
+    width: 100%;
     overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     border: 2px solid transparent;
@@ -452,23 +457,21 @@
   .gallery__thumb--featured { border-color: rgba(45,90,39,.3); }
   .gallery__thumb--featured.is-active { border-color: var(--accent); }
   .gallery__thumb-label {
-    display: block;
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--ink-3);
-    text-align: center;
-    margin-top: 4px;
-    letter-spacing: .02em;
+    font-size: 10px; font-weight: 500;
+    color: var(--ink-3); text-align: center;
+    letter-spacing: .02em; white-space: nowrap;
   }
-  .gallery__thumb--featured .gallery__thumb-label { color: var(--accent); }
+  .gallery__thumb-wrap:has(.gallery__thumb--featured) .gallery__thumb-label { color: var(--accent); }
   @media (max-width: 880px) {
     .gallery__layout { grid-template-columns: 1fr; }
     .gallery__thumbs {
       flex-direction: row;
       overflow-x: auto;
       padding-bottom: 4px;
+      gap: 10px;
     }
-    .gallery__thumb { width: 88px; flex-shrink: 0; }
+    .gallery__thumb-wrap { width: 76px; }
+    .gallery__thumb-label { display: none; }
   }
 
   /* ============ CONFIGURATOR ============ */
@@ -1156,30 +1159,30 @@
         <img src="https://upload.cdn.baselinker.com/products/5066973/1b60208cf4f828b841008b95e424bfc7.png" alt="Pufa Kostka POSO musztardowa" />
       </div>
       <div class="gallery__thumbs" id="galleryThumbs" role="tablist">
-        <button class="gallery__thumb is-active" data-index="0" aria-label="Butelkowa zieleń">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/7feecb02bb23c165162a5b9e753a5abe.png" alt="" />
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb is-active" data-index="0" aria-label="Butelkowa zieleń"><img src="https://upload.cdn.baselinker.com/products/5066973/7feecb02bb23c165162a5b9e753a5abe.png" alt="" /></button>
           <span class="gallery__thumb-label">Kolor</span>
-        </button>
-        <button class="gallery__thumb gallery__thumb--featured" data-index="1" aria-label="Schowek otwarty">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/1fa4c8f0bab573f4a0290e137cee4be3.png" alt="" />
-          <span class="gallery__thumb-label">Schowek</span>
-        </button>
-        <button class="gallery__thumb" data-index="2" aria-label="Aranżacja salonu">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/1518ac111e0e22318b65639c23cf891f.png" alt="" />
+        </div>
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb gallery__thumb--featured" data-index="1" aria-label="Schowek otwarty"><img src="https://upload.cdn.baselinker.com/products/5066973/1fa4c8f0bab573f4a0290e137cee4be3.png" alt="" /></button>
+          <span class="gallery__thumb-label" style="color:var(--accent)">Schowek</span>
+        </div>
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb" data-index="2" aria-label="Aranżacja salonu"><img src="https://upload.cdn.baselinker.com/products/5066973/1518ac111e0e22318b65639c23cf891f.png" alt="" /></button>
           <span class="gallery__thumb-label">Salon</span>
-        </button>
-        <button class="gallery__thumb" data-index="3" aria-label="Szara">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/c8707953fc6e20759159590abf43b13d.png" alt="" />
+        </div>
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb" data-index="3" aria-label="Szara"><img src="https://upload.cdn.baselinker.com/products/5066973/c8707953fc6e20759159590abf43b13d.png" alt="" /></button>
           <span class="gallery__thumb-label">Szary</span>
-        </button>
-        <button class="gallery__thumb" data-index="4" aria-label="Beżowa">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/a309954ac89bcadb076153ec9081fdf4.png" alt="" />
+        </div>
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb" data-index="4" aria-label="Beżowa"><img src="https://upload.cdn.baselinker.com/products/5066973/a309954ac89bcadb076153ec9081fdf4.png" alt="" /></button>
           <span class="gallery__thumb-label">Beżowy</span>
-        </button>
-        <button class="gallery__thumb" data-index="5" aria-label="Musztardowa">
-          <img src="https://upload.cdn.baselinker.com/products/5066973/1b60208cf4f828b841008b95e424bfc7.png" alt="" />
+        </div>
+        <div class="gallery__thumb-wrap">
+          <button class="gallery__thumb" data-index="5" aria-label="Musztardowa"><img src="https://upload.cdn.baselinker.com/products/5066973/1b60208cf4f828b841008b95e424bfc7.png" alt="" /></button>
           <span class="gallery__thumb-label">Musztarda</span>
-        </button>
+        </div>
       </div>
     </div>
   </div>
